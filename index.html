@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#124734">
+  <title>Seeds of Gold Junior School | School Portal</title>
+  <link rel="icon" href="assets/school-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><img src="assets/school-mark.svg" alt="" width="42" height="42"><span><b>Seeds of Gold</b><small>Junior School · Kitende</small></span></a>
+  <button id="menuBtn" class="menu-btn" aria-label="Open navigation">☰</button>
+  <nav id="nav"><a href="#home">Home</a><a href="#admissions">Admissions</a><a href="#calendar">Calendar</a><a href="#library">Library</a><a href="#portal">Portal</a></nav>
+</header>
+<main>
+  <section id="home" class="hero">
+    <div class="hero-copy"><span class="eyebrow">LEARN · GROW · SHINE</span><h1>Growing confident learners, one day at a time.</h1>
+      <p>A school information and learning portal for pupils, parents, teachers and administrators.</p>
+      <div class="actions"><a class="btn primary" href="#admissions">Apply for admission</a><a class="btn ghost" href="#portal">Sign in to portal</a></div>
+    </div>
+    <img class="hero-art" src="assets/school-illustration.svg" alt="Illustration of a school, books and a tree">
+  </section>
+  <section class="feature-grid">
+    <article class="feature"><span>📘</span><h3>Learning & reports</h3><p>Access report cards, assignments and learning resources through approved accounts.</p></article>
+    <article class="feature"><span>🗓️</span><h3>School calendar</h3><p>Keep up with term dates, events and important school notices.</p></article>
+    <article class="feature"><span>🌱</span><h3>Talent corner</h3><p>Approved student performances can be shared privately with school families.</p></article>
+  </section>
+  <section id="admissions" class="section split">
+    <div><span class="eyebrow">JOIN OUR SCHOOL</span><h2>Online admission enquiry</h2><p>Submit an enquiry. This starter form saves to Supabase only after you configure the project. The school must verify documents and complete admission in person.</p><div class="notice">Do not upload birth certificates or other sensitive documents until the school has approved the privacy and retention process.</div></div>
+    <form id="admissionForm" class="panel">
+      <label>Child's full name<input name="student_name" required maxlength="120"></label>
+      <div class="two"><label>Date of birth<input name="date_of_birth" type="date" required></label><label>Residence<input name="residence" required maxlength="160"></label></div>
+      <div class="two"><label>Parent/guardian name<input name="guardian_name" required maxlength="120"></label><label>Parent/guardian phone<input name="guardian_phone" required maxlength="40"></label></div>
+      <label>Parent/guardian email<input name="guardian_email" type="email" maxlength="160"></label>
+      <div class="two"><label>Class requested<select name="class_requested" required><option value="">Choose class</option><option>Baby</option><option>Middle</option><option>Top</option><option>P.1</option><option>P.2</option><option>P.3</option><option>P.4</option><option>P.5</option><option>P.6</option><option>P.7</option></select></label><label>Study arrangement<select name="study_mode" required><option value="">Choose</option><option>Day</option><option>Boarding</option></select></label></div>
+      <label>Additional notes<textarea name="notes" rows="3" maxlength="1000"></textarea></label>
+      <button class="btn primary" type="submit">Submit admission enquiry</button><p id="admissionMessage" class="form-message" aria-live="polite"></p>
+    </form>
+  </section>
+  <section id="calendar" class="section"><span class="eyebrow">PLAN AHEAD</span><h2>Term dates & important events</h2><div id="publicCalendar" class="empty-state">School-approved dates will appear here when published by an administrator.</div></section>
+  <section id="library" class="section tint"><span class="eyebrow">READ · PRACTISE · DISCOVER</span><h2>Library & assignments</h2><p>Nursery and primary resources are available to signed-in users according to their role and class. Sign in to see private resources.</p></section>
+  <section id="portal" class="section split">
+    <div><span class="eyebrow">SECURE SCHOOL ACCESS</span><h2>Portal sign in</h2><p>Use the account created or invited by the school. Parents should only see children linked to their account.</p><ul class="checklist"><li>Administrator dashboard</li><li>Teacher class and attendance tools</li><li>Parent reports and notifications</li><li>Private talent clips</li></ul></div>
+    <form id="loginForm" class="panel">
+      <label>Email address<input name="email" type="email" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn primary" type="submit">Sign in</button><button id="resetPassword" type="button" class="link-btn">Forgot password?</button>
+      <p id="loginMessage" class="form-message" aria-live="polite"></p>
+    </form>
+  </section>
+  <section id="dashboard" class="section hidden">
+    <div class="dashboard-head"><div><span class="eyebrow">PRIVATE PORTAL</span><h2 id="welcomeTitle">Dashboard</h2><p id="roleLabel"></p></div><button id="signOut" class="btn ghost">Sign out</button></div>
+    <div id="dashboardContent"></div>
+  </section>
+</main>
+<footer><div class="footer-brand"><img src="assets/school-mark.svg" width="34" alt=""><b>Seeds of Gold Junior School</b></div><p>Kitende · School information portal</p><p><a id="emailLink" href="mailto:school@example.com">Email the school</a> · <a id="whatsappLink" href="https://wa.me/" target="_blank" rel="noopener">WhatsApp the school</a></p><small>Contact details shown here are placeholders. Replace them with school-approved details.</small></footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/config.js"></script><script src="js/app.js"></script>
+</body></html>
